@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai5</title>
+</head>
+<body>
+<script>
+    let km = +Number(prompt('nhap so km: '));
+    let money = 0;
+    function moneyTaxi(n) {
+
+        if (n == 1){
+            money = 5000;
+        }else if (n <= 30){
+            for (let i = 1; i <=n; i++){
+                money = money + 4000;
+            }
+        }else if (n > 30) {
+            for (let j = 1; j <= n; j++) {
+                money = money + 3000;
+            }
+        }
+        return money;
+    }
+    console.log(moneyTaxi(km));
+</script>
+</body>
+</html>

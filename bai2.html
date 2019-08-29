@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai2</title>
+</head>
+<body>
+<script>
+    let numA = Number(prompt('a: '));
+    let numB = Number(prompt('b: '));
+    let UCLN;
+    let BCNN;
+    function f() {
+
+        if (numA > numB) {
+            if (numA % numB == 0) {
+                UCLN = numB;
+                BCNN = numA;
+            } else {
+                for (let i = numB; i > 0; i--) {
+                    if ((numA % i == 0) && (numB % i == 0)) {
+                        UCLN = i;
+                        break;
+                    }
+                }
+                for (let i = numA; i > 0; i++) {
+                    if ((i % numA == 0) && (i % numB == 0)) {
+                        BCNN = i;
+                        break;
+                    }
+                }
+            }
+        }else if (numB > numA){
+            if (numB % numA == 0){
+                UCLN = numA;
+                BCNN = numB;
+            }else {
+                for (let i = numA; i > 0; i--){
+                    if ((numB % i == 0) && (numA % i == 0)){
+                        UCLN = i;
+                        break;
+                    }
+                }
+                for (let i = numB; i > 0; i++){
+                    if ((i % numB == 0) && (i % numA == 0)){
+                        BCNN = i;
+                        break;
+                    }
+                }
+            }
+        }
+        document.write('UCLN: '+ UCLN + '<br>' + 'BCNN: ' + BCNN )
+    }
+    f();
+</script>
+</body>
+</html>

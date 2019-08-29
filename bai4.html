@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai4</title>
+</head>
+<body>
+<script>
+    let num = Number(prompt('nhap N: '));
+    let arr = [0,1];
+    function fibonacci(n) {
+        for (let i = arr.length; i <20; i++) {
+            arr[i] = arr[i-1]+arr[i-2];
+
+            if (arr[arr.length-1] > n){
+                arr.splice(arr.length-1);
+                break;
+
+            }
+        }
+        return arr;
+    }
+    document.write(fibonacci(num));
+</script>
+</body>
+</html>

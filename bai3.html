@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai3</title>
+</head>
+<body>
+<script>
+    let num = Number(prompt('nhap N: '));
+    function checkPrime(num) {
+        let checkPr = true;
+        if (num < 2){
+            checkPr = false;
+        }
+        for (let i = 2; i < num; i++){
+            if (num % i == 0){
+                checkPr = false;
+                break;
+            }else{
+                checkPr = true;
+            }
+        }
+        return checkPr;
+    }
+    function listPrime(n) {
+        let primes = [];
+        for (let i = 1; i < n; i++){
+            if (checkPrime(i)==true){
+                primes.push(i);
+            }
+        }
+        return primes;
+    }
+    document.write(listPrime(num));
+</script>
+</body>
+</html>

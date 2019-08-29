@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bai7</title>
+</head>
+<body>
+<script>
+let myArr = [1,2,3,7,8,9];
+let num = Number(prompt('nha N: '));
+
+    function pushN(arr, n) {
+        if (n <= arr[1]){
+            arr.unshift(n);
+
+        }else if (n >= arr[arr.length -1]){
+            arr.push(n);
+
+        }else {
+            for (let i =0; i< arr.length; i++){
+                if ((arr[i] <= n) && (n < arr[i + 1])){
+                    arr.splice((i+1), 0, n);
+                    break;
+                }
+            }
+        }
+        return arr;
+    }
+    console.log(pushN(myArr,num))
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let myArr = [235, -439, 124, 678, 573,-3571,759111,412694,7777777777];
+function checkNumber(arr) {
+    // check number
+    let newArr = [];
+    for (let i=0; i< arr.length; i++) {
+        let check = 0;
+        if (arr[i] % 2 !== 0) {
+            let newStringArr = String(arr[i]);
+            let newNumberArr = newStringArr.split('');
+            for (let j = 0; j < newNumberArr.length-1; j++) {
+                let newNumber = Number(newNumberArr[j]);
+                if ((newNumber%2 !== 0)||(isNaN(newNumber%2))) {
+                    check++;
+                }
+            }
+            if (check=== newNumberArr.length -1){
+                newArr.push(arr[i]);
+            }
+        }
+    }
+    // check number max
+    let numberMax = newArr[0];
+    for (let k = 1; k < newArr.length; k++){
+        if (numberMax <= newArr[k]){
+            numberMax = newArr[k];
+        }
+    }
+    return numberMax;
+}
+document.write("Number to look for is: " + checkNumber(myArr));
+</script>
+</body>
+</html>
